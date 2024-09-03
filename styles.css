@@ -1,0 +1,357 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0e0e0; /* Светло-серый фон для всего тела страницы */
+    color: #003366; /* Темно-синий цвет текста для всего содержимого */
+    text-transform: uppercase; /* Преобразование всего текста на странице в верхний регистр */
+}
+
+a {
+    text-decoration: none; /* Убираем подчеркивание у всех ссылок */
+    color: inherit; /* Сохраняем цвет ссылки такой же, как у родительского элемента */
+}
+
+a:hover {
+    text-decoration: none; /* Убираем подчеркивание при наведении */
+    color: #FF8C00; /* Опционально: можно изменить цвет ссылки при наведении */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Отступы для внутреннего контейнера */
+    padding-bottom: 0; /* Убираем лишний отступ снизу */
+    background-color: #f4f4f4; /* Светлый фон для секций с содержанием */
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column; /* Элементы располагаются по вертикали */
+    align-items: center; /* Центрируем содержимое по горизонтали */
+    margin-bottom: 10px; /* Уменьшите нижний отступ */
+    pointer-events: none;
+}
+
+.logo-container h3 {
+    font-size: 1.5em; /* Увеличенный размер шрифта */
+    margin-top: 5px; /* Отступ сверху для надписи "TARLAN" */
+    margin-left: 0; /* Убираем отступ слева */
+    margin-bottom: 0; /* Убираем нижний отступ */
+    color: #003366; /* Темно-синий цвет для согласованности */
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+    text-align: center; /* Центрируем текст */
+    pointer-events: none;
+}
+
+.main_logo_pic {
+    width: 100px; /* Увеличенный логотип */
+    height: auto;
+    border-radius: 100%;
+    pointer-events: none;
+}
+
+.title-nav-container {
+    flex: 1;
+    text-align: center; /* Центрируем текст и навигацию */
+    margin-top: 0; /* Убираем верхний отступ, если есть */
+}
+
+.title-nav-container h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #003366; /* Темно-синий цвет заголовка */
+    pointer-events: none;
+}
+
+.navigation {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0; /* Отступ сверху для навигации */
+    display: inline-block; /* Выровнять навигацию по центру */
+}
+
+.map-with-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kazakhstan-map {
+    height: 50px; /* Размер карты */
+    margin-right: 20px; /* Отступ справа от карты */
+    margin-left: 20px;
+    fill:  #003366; /* Синий цвет для карты */
+    vertical-align: middle; /* Выравнивание карты по центру */
+    pointer-events: none;
+}
+
+.content-section {
+    padding: 45px; /* Внутренние отступы для секции с содержанием */
+    background-color: #f4f4f4; /* Светлый фон для секций с содержанием */
+    margin: 5px auto; /* Внешние отступы и выравнивание секции по центру */
+    max-width: 1300px; /* Увеличенная максимальная ширина секции */
+    border-radius: 5px; /* Скругленные углы секции */
+    padding-top: 0px; /* Убираем отступ сверху у контейнера */
+    margin-top: 5px; /* Убираем внешний отступ сверху */
+}
+
+h2 {
+    font-size: 2em; /* Крупный размер шрифта для подзаголовков */
+    color: #003366; /* Темно-синий цвет для подзаголовков */
+    text-align: center; /* Центрирование подзаголовков */
+    margin-bottom: 10px; /* Отступ снизу для подзаголовков */
+    margin-top: 5px; /* Убирает отступ сверху */
+    padding-top: 10px; /* Убирает внутренний отступ сверху */
+    color: #FF8C00; /* Оранжевый цвет подзаголовков */
+}
+
+.placeholder {
+    display: flex; /* Используем флексбокс для заглушки карты */
+    justify-content: center; /* Центрируем содержимое заглушки по горизонтали */
+    align-items: center; /* Центрируем содержимое заглушки по вертикали */
+    height: 300px; /* Высота заглушки */
+    border: 2px dashed #003366; /* Пунктирная рамка для заглушки */
+}
+
+footer {
+    background-color: #003366; /* Темно-синий фон для нижнего колонтитула */
+    color: white; /* Белый цвет текста для нижнего колонтитула */
+    text-align: center; /* Центрирование текста нижнего колонтитула */
+    padding: 0.5px; /* Внутренние отступы нижнего колонтитула */
+}
+
+#indicators {
+    display: grid; /* Используем CSS Grid для размещения графиков */
+    grid-template-columns: repeat(3, 1fr); /* Сетка из трех колонок равной ширины */
+    gap: 10px; /* Промежуток между графиками */
+    max-width: 100%; /* Максимальная ширина контейнера для графиков */
+    margin: 0 auto; /* Центрирование блока с графиками */
+}
+
+#indicators canvas {
+    width: 100%; /* Устанавливаем ширину на 100% от родительского контейнера */
+    height: auto; /* Высота автоматически подстраивается под содержимое */
+    max-width: 400px; /* Ограничение максимальной ширины */
+    max-height: 200px; /* Ограничение максимальной высоты */
+    margin: 0 auto; /* Центрирование графиков внутри колонки */
+}
+
+
+
+
+
+/* Плитки с рисками */
+#risks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    gap: 20px; /* Увеличенное расстояние между плитками */
+    margin: 0 auto;
+    max-width: 1300px; /* Увеличенная максимальная ширина контейнера */
+}
+
+.risk-tile {
+    background-color: #F0F0F0; /* Светло-серый фон */
+    color: white; /* Белый цвет текста */
+    padding: 20px;
+    border-radius: 5px; /* Скругленные углы плитки */
+    /* text-align: left; /* Выравнивание текста слева */
+    cursor: pointer;
+    position: relative;
+    height: 120px; /* Увеличиваем высоту плиток для больших изображений */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Выравниваем содержимое плитки по левому краю */
+    flex: 1 1 300px; /* Задаем минимальную ширину плитки */
+}
+
+.risk-tile img {
+    max-height: 150px; /* Увеличиваем высоту изображения */
+    margin-right: 15px; /* Отступ между изображением и текстом */
+    display: inline-block; /* Отображение изображения рядом с текстом */
+    vertical-align: middle; /* Выравнивание изображения по центру плитки */
+    border-radius: 10px; /* Скругленные углы радиусом 10px */
+    opacity: 80%;
+}
+
+.risk-tile p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333333; /* Темно-серый цвет текста */
+    text-align: center; /* Горизонтальное центрирование текста */
+    flex: 1; /* Позволяет тексту занимать оставшееся пространство */
+    display: flex;
+    align-items: center; /* Вертикальное центрирование текста */
+    justify-content: center; /* Горизонтальное центрирование текста */
+}
+
+.risk-tile:hover {
+    background-color: #FF6347; /* Красный цвет при наведении (можно использовать любой оттенок красного) */
+    font-size: 1.05em; 
+    /*font-weight: bold; /* Жирный текст при наведении */
+}
+
+.risk-tile::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%; /* Позиция подсказки над плиткой */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000000; /* Черный непрозрачный фон */
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    font-size: 0.9em;
+    width: 100%; /* Ширина подсказки равна ширине плитки */
+    text-align: justify; /* Выровнять текст по ширине */
+    word-wrap: break-word; /* Перенос текста на новую строку */
+    white-space: normal; /* Позволяет тексту занимать несколько строк */
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s ease-in-out;
+    text-transform: none; /* Убирает эффект всех заглавных букв */
+}
+
+.risk-tile::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #000000 transparent transparent transparent; /* Указатель на подсказку */
+    z-index: 1001;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s ease-in-out;
+}
+
+.risk-tile:hover::after,
+.risk-tile:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Фиксированное положение */
+    z-index: 1000; /* Появляется поверх других элементов */
+    padding-top: 30px; /* Уменьшенный отступ сверху */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ширина экрана */
+    height: 100%; /* Высота экрана */
+    overflow: auto; /* Включает прокрутку при необходимости */
+    background-color: rgb(0,0,0); /* Цвет фона */
+    background-color: rgba(0,0,0,0.9); /* Черный фон с прозрачностью */
+}
+
+.modal canvas {
+    margin: auto;
+    display: block;
+    width: 95%; /* Увеличенная ширина графика */
+    max-width: 1200px; /* Увеличенная максимальная ширина */
+    max-height: 90vh; /* Высота графика не превышает 90% от высоты экрана */
+}
+
+.close {
+    position: absolute;
+    top: 10px; /* Уменьшенный отступ сверху */
+    right: 25px; /* Уменьшенный отступ справа */
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Стили для новой кнопки анализа */
+.analysis-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.styled-button {
+    background-color: #003366;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.styled-button:hover {
+    background-color: #005599;
+}
+
+/* Стили для нового модального окна */
+.modal-analysis {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1050; /* Более высокий z-index для перекрытия других окон */
+    padding-top: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* Немного темнее для отличия */
+}
+
+.modal-content-analysis {
+    background-color: #f4f4f4;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.close-analysis {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-analysis:hover,
+.close-analysis:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Стили для прогресс-бара */
+#progressContainerAnalysis {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+#progressBarAnalysis {
+    width: 0;
+    height: 30px;
+    background-color: #077d0b;
+    border-radius: 5px;
+    transition: width 0.5s;
+}
+
+/* Стили для скрытого прогресс-бара после завершения */
+#progressBarAnalysis.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
